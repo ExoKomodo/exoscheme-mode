@@ -14,7 +14,7 @@
   '("define" "define*" "define-module" "use-modules" "use-module" "lambda" "lambda*"))
 
 (defun exoscheme-keywords ()
-	'("let" "let*" "cond" "if" "else" "when" "nil"))
+	'("let" "let*" "cond" "if" "else" "when" "nil" "list" "+" "/" "-" "*"))
 
 (defun exoscheme-specials ()
 	'("," "'" "`" ",@"))
@@ -29,10 +29,12 @@
     (,(regexp-opt (exoscheme-builtins) 'symbols) . font-lock-builtin-face)
     (,(regexp-opt (exoscheme-types) 'symbols) . font-lock-type-face)
     (,(regexp-opt (exoscheme-constants)) . font-lock-constant-face)
+    ("[0-9]+" . font-lock-constant-face)
+    ("[0-9]*\.[0-9]+" . font-lock-constant-face)
     (,(regexp-opt (exoscheme-specials)) . font-lock-warning-face)
-    ("<[a-zA-Z-_][a-zA-Z0-9-_]*>" . font-lock-type-face)
-	("#:[a-zA-Z-_][a-zA-Z0-9-_]*" . font-lock-variable-name-face)
-	("(\\([a-zA-Z-_][a-zA-Z0-9-_/]*\\)" . (1 font-lock-function-name-face))))
+    ("<[a-zA-Z0-9*+-=%_/<>]+>" . font-lock-type-face)
+	("#:[a-zA-Z0-9*+-=%_/<>]+" . font-lock-variable-name-face)
+	("(\\([a-zA-Z0-9*+-=%_/<>]+\\)" . (1 font-lock-function-name-face))))
 
 (define-derived-mode exoscheme-mode lisp-mode "Scheme mode derived from Lisp mode"
   "Simple major mode for editing C files."
