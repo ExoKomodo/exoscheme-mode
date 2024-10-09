@@ -1,12 +1,17 @@
 # exoscheme-mode
 
-Provides a simple Scheme mode for Emacs, based on `lisp-mode`, with richer syntax highlighting than alternatives.
+Provides a simple Scheme mode for Emacs, based on `scheme-mode`, with richer syntax highlighting than alternatives.
 
 ## Important Links
 
 - [Public Distribution Repository](https://github.com/exokomodo/exoscheme-mode)
 - [Development Repository](https://git.sr.ht/~jamesaorson/exoscheme-mode)
 - [Existing `scheme-mode`](https://github.com/emacs-mirror/emacs/blob/master/lisp/progmodes/scheme.el)
+
+## Comparison
+
+`scheme-mode` on the left, `exoscheme-mode` on the right
+![Comparison](./images/comparison.png)
 
 ## How to use
 
